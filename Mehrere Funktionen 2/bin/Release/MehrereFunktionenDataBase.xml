@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ActivityRecord" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ActivityRecord">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CoreDescription" type="xs:string" minOccurs="0" />
+                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="FullDescription" type="xs:string" minOccurs="0" />
+                <xs:element name="ReasonOfNotDoing" type="xs:string" minOccurs="0" />
+                <xs:element name="PossibleSolution" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <ActivityRecord>
+    <CoreDescription>Run2kmEveryDay</CoreDescription>
+    <Frequency>1</Frequency>
+    <Category>5</Category>
+    <CommonDenominator>2</CommonDenominator>
+    <FullDescription />
+    <ReasonOfNotDoing />
+    <PossibleSolution />
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>30GermanWordsPerDay</CoreDescription>
+    <Frequency>2</Frequency>
+    <Category>0</Category>
+    <CommonDenominator>0</CommonDenominator>
+    <FullDescription>ten sam schemat nauki co z angielskim</FullDescription>
+    <ReasonOfNotDoing>nie mogę się rozdrabniać na zbyt małe zadania poboczne</ReasonOfNotDoing>
+    <PossibleSolution />
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>SleepAtLeast8h</CoreDescription>
+    <Frequency>2</Frequency>
+    <Category>3</Category>
+    <CommonDenominator>0</CommonDenominator>
+    <FullDescription>“If you’re getting less sleep than you need, you’re worsening your condition”</FullDescription>
+    <ReasonOfNotDoing />
+    <PossibleSolution />
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>DHA+Mg+Ca+Zn</CoreDescription>
+    <Frequency>2</Frequency>
+    <Category>7</Category>
+    <CommonDenominator>1</CommonDenominator>
+    <FullDescription>only after midday lunch</FullDescription>
+    <ReasonOfNotDoing>don't remember and sometimes not available</ReasonOfNotDoing>
+    <PossibleSolution />
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>SetForTommorow</CoreDescription>
+    <Frequency>1</Frequency>
+    <Category>3</Category>
+    <CommonDenominator>1</CommonDenominator>
+    <FullDescription>make things ready for tommorow (charge devices, put everything on an one cheap)</FullDescription>
+    <ReasonOfNotDoing>systematic forgetting</ReasonOfNotDoing>
+    <PossibleSolution>is not this program a remedy for forgetting things? &gt;:)</PossibleSolution>
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>f.lux after sunset</CoreDescription>
+    <Frequency>1</Frequency>
+    <Category>3</Category>
+    <CommonDenominator>2</CommonDenominator>
+    <FullDescription>"You need to be a Nazi about light at night."</FullDescription>
+    <ReasonOfNotDoing>it is not THAT needed. I can skip this</ReasonOfNotDoing>
+    <PossibleSolution />
+  </ActivityRecord>
+  <ActivityRecord>
+    <CoreDescription>herbs</CoreDescription>
+    <Frequency>1</Frequency>
+    <Category>7</Category>
+    <CommonDenominator>1</CommonDenominator>
+    <FullDescription>50g x (kwiat głogu, liść miłorzębu, ziele jemioły, liść rozmarynu, Leonurus cardiaca)	
+1x dziennie</FullDescription>
+    <ReasonOfNotDoing>systematic forgetting (and I have plenty yerba to drink)</ReasonOfNotDoing>
+    <PossibleSolution>reminder -&gt; ENSO</PossibleSolution>
+  </ActivityRecord>
+</NewDataSet>
