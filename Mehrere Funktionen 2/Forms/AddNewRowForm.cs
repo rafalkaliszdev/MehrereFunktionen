@@ -36,7 +36,7 @@ namespace Mehrere_Funktionen_2 {
         }
         //---------------------------------------------------------------------------
         private void AddNewRowForm_FormClosing(object sender, FormClosingEventArgs e) {
-
+            //saving a file fill be done when user exits Form
             DialogResult dialogResult = MessageBox.Show(
                 "Save object?",
                 " ",

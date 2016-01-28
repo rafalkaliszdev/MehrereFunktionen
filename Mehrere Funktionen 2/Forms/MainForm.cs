@@ -12,7 +12,7 @@ using System.Net.Sockets; //net feature
 namespace Mehrere_Funktionen_2 {
     public partial class MainForm : Form {
         // this collection needs to be global
-        public List<Activity> listActivities;
+        public List<Activity> collectionActivities;
         //Constructor ---------------------------------------------------------------
         public MainForm() {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Mehrere_Funktionen_2 {
             tabControl1.SelectedIndex = 1;
 
             //collection initialization
-            listActivities = new List<Activity>();
+            collectionActivities = new List<Activity>();
 
             // events
             dgvImplementingActivities.CellContentClick += DgvImplementingActivities_CellContentClick;
@@ -33,16 +33,26 @@ namespace Mehrere_Funktionen_2 {
             dgvImplementingActivities.CurrentCellDirtyStateChanged += DgvImplementingActivities_CurrentCellDirtyStateChanged;
 
             bool isSchemeReady = LoadDgvScheme();
-            LoadXmltoDgv(isSchemeReady);    //XML objects
+            LoadXmltoList(isSchemeReady);    //XML objects
             //PopulateList();               //build-in objects TEST
-            ForceRefreshDgv();
+            UpdateDgvRecordsFromCollection();
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// EH firing closing methods
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
             DataTable dataTable = LoadDataTableColumns();
             LoadDataTableRowsAndSaveXml(dataTable);
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// EH handling adding new record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bAddNewRecord_Click(object sender, EventArgs e) {
             AddNewRowForm addNewRow = new AddNewRowForm();
 
@@ -52,25 +62,35 @@ namespace Mehrere_Funktionen_2 {
             addNewRow.ShowDialog();
 
             if (tempActivity != null) {
-                listActivities.Add(tempActivity);
-                ForceRefreshDgv();
+                collectionActivities.Add(tempActivity);
+                UpdateDgvRecordsFromCollection();
 
             }
             this.Show();
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// EH for removing record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bRemoveActivity_Click(object sender, EventArgs e) {
             //wenn ich es könnte besser sein?
             foreach (DataGridViewRow row in this.dgvImplementingActivities.SelectedRows) {
-                for (int i = 0; i < listActivities.Count; ++i) {
-                    if (listActivities[i].CoreDescription == (string)row.Cells[0].Value) {
-                        listActivities.Remove(listActivities[i]);
+                for (int i = 0; i < collectionActivities.Count; ++i) {
+                    if (collectionActivities[i].CoreDescription == (string)row.Cells[0].Value) {
+                        collectionActivities.Remove(collectionActivities[i]);
                     }
                 }
-                ForceRefreshDgv();
+                UpdateDgvRecordsFromCollection();
             }
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// Button sending to seprated console application XML file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bSendXml_Click(object sender, EventArgs e) {
             MessageBox.Show("this feature is not available yet");
             //ruru
@@ -88,13 +108,18 @@ namespace Mehrere_Funktionen_2 {
             }
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// EH changing ComboBoxCell value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgvImplementingActivities_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
             // this EH fires as 2nd
             DataGridViewComboBoxCell dgvComboBoxCell = (DataGridViewComboBoxCell)dgvImplementingActivities.Rows[e.RowIndex].Cells[1];
             if (dgvComboBoxCell != null) {
                 try {
                     Activity.ActivityFrequency tempFrequency = (Activity.ActivityFrequency)dgvComboBoxCell.Value;
-                    listActivities[e.RowIndex].Frequency = tempFrequency;
+                    collectionActivities[e.RowIndex].Frequency = tempFrequency;
                     dgvComboBoxCell.FlatStyle = FlatStyle.Popup; // changes ComboBox appearance
                     dgvComboBoxCell.ReadOnly = true; // disables further modification
                 }
@@ -104,6 +129,11 @@ namespace Mehrere_Funktionen_2 {
             }
         }
         //---------------------------------------------------------------------------
+        /// <summary>
+        /// EH opening new form that supplies detailed information about record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgvImplementingActivities_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             DataGridView senderObject = (DataGridView)sender;
             // 1st condition checks whether clicked column has correct type
@@ -112,7 +142,7 @@ namespace Mehrere_Funktionen_2 {
                 DetailedActivityInformationForm detailedForm = new DetailedActivityInformationForm();
 
                 try {
-                    detailedForm.SendCurrentInformations(listActivities[e.RowIndex]);
+                    detailedForm.SendCurrentInformations(collectionActivities[e.RowIndex]);
                     this.Hide();
                     detailedForm.ShowDialog();                    
                 }
@@ -173,7 +203,7 @@ namespace Mehrere_Funktionen_2 {
             return isSchemeReady;
         }
         //---------------------------------------------------------------------------
-        private void LoadXmltoDgv(bool isSchemeReady) {
+        private void LoadXmltoList(bool isSchemeReady) {
             if (isSchemeReady) { //wenn ich es könnte besser sein?
                 DataTable dataTable = new DataTable();
 
@@ -205,16 +235,17 @@ namespace Mehrere_Funktionen_2 {
                     activity.PossibleSolution = 
                         ((dataRow[6] == DBNull.Value /*null*/) ? string.Empty : (string)dataRow[6]);
 
-                    listActivities.Add(activity);
-                }
-
-                
+                    collectionActivities.Add(activity);
+                }                
             }
         }
         //---------------------------------------------------------------------------
-        private void ForceRefreshDgv() {
+        /// <summary>
+        /// Method updating DGV from List<T> - often calling
+        /// </summary>
+        private void UpdateDgvRecordsFromCollection() {
             dgvImplementingActivities.Rows.Clear();
-            foreach (Activity activity in listActivities) {
+            foreach (Activity activity in collectionActivities) {
                 //for each object in collection, add this object as Row to DGV (with specified Values)
                 //this way does not destroy DataGridView Scheme
                 dgvImplementingActivities.Rows.Add(activity.CoreDescription, activity.Frequency, activity.Category, activity.CommonDenominator);
@@ -272,7 +303,7 @@ namespace Mehrere_Funktionen_2 {
 
             //wenn ich es könnte besser sein?
 
-            foreach (Activity activity in listActivities) {
+            foreach (Activity activity in collectionActivities) {
                 DataRow dataRow = dataTable.NewRow();
                 dataRow[0] = activity.CoreDescription;
                 dataRow[1] = activity.Frequency;

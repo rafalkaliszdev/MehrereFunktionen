@@ -16,6 +16,8 @@ namespace Mehrere_Funktionen_2 {
         }
         //---------------------------------------------------------------------------
         public void SendCurrentInformations(Activity dataAboutParticularAction) {
+            //this method is called >>before<< .ShowDialog() so I can send object
+            //whose Properties are used below
             lCoreDescription.Text = "core description....." + dataAboutParticularAction.CoreDescription;
             lFrequency.Text = "current frequency...." + dataAboutParticularAction.Frequency;
             lCategory.Text = "category............." + dataAboutParticularAction.Category;
