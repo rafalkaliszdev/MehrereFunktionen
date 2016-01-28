@@ -8,7 +8,7 @@ Main Form .cx file
 https://github.com/kvsanagi/forPublicOverview/blob/master/Mehrere%20Funktionen%202/Forms/MainForm.cs
 
 Program .exe
-https://github.com/kvsanagi/forPublicOverview/blob/master/Mehrere%20Funktionen%202/bin/Release/MehrereFunktionenDataBase.xml
+https://github.com/kvsanagi/forPublicOverview/blob/master/Mehrere%20Funktionen%202/bin/Release/Mehrere%20Funktionen%202.exe
 
 I also advise to download a XML file, that provides nice example how this program should look
 https://github.com/kvsanagi/forPublicOverview/blob/master/Mehrere%20Funktionen%202/bin/Release/MehrereFunktionenDataBase.xml
