@@ -33,6 +33,7 @@ namespace Mehrere_Funktionen_2 {
             cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.BOULDER);
             cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.EINESPUR);
             cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.ENSO);
+            cbCommonDenominator.SelectedItem = Activity.ActivityCommonDenominatorCategory.NOT_SPECIFIED;
         }
         //---------------------------------------------------------------------------
         private void AddNewRowForm_FormClosing(object sender, FormClosingEventArgs e) {
@@ -74,9 +75,12 @@ namespace Mehrere_Funktionen_2 {
                 NewActivity.FullDescription = tbFullDescription.Text;
                 NewActivity.ReasonOfNotDoing = tbReasonOfNotDoing.Text;
                 NewActivity.PossibleSolution = tbPossibleSolution.Text;
+
+                this.DialogResult = DialogResult.Yes; //refers to THIS Form (AddNewRowForm)
             }
-            if (dialogResult == DialogResult.No) {
+            else {
                 NewActivity = null;
+                this.DialogResult = DialogResult.No; //refers to THIS Form (AddNewRowForm)
             }
         }
         //---------------------------------------------------------------------------

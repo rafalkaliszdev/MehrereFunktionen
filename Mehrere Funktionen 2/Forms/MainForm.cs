@@ -13,6 +13,7 @@ namespace Mehrere_Funktionen_2 {
     public partial class MainForm : Form {
         // this collection needs to be global
         public List<Activity> collectionActivities;
+
         //Constructor ---------------------------------------------------------------
         public MainForm() {
             InitializeComponent();
@@ -27,6 +28,10 @@ namespace Mehrere_Funktionen_2 {
             //collection initialization
             collectionActivities = new List<Activity>();
 
+            //properties
+            dgvImplementingActivities.EditMode = DataGridViewEditMode.EditOnEnter; //ComboBox responds on 1-click
+            dgvImplementingActivities.AllowUserToAddRows = false; //removes blank row on bottom
+
             // events
             dgvImplementingActivities.CellContentClick += DgvImplementingActivities_CellContentClick;
             dgvImplementingActivities.CellValueChanged += DgvImplementingActivities_CellValueChanged;
@@ -34,7 +39,6 @@ namespace Mehrere_Funktionen_2 {
 
             bool isSchemeReady = LoadDgvScheme();
             LoadXmltoList(isSchemeReady);    //XML objects
-            //PopulateList();               //build-in objects TEST
             UpdateDgvRecordsFromCollection();
         }
         //---------------------------------------------------------------------------
@@ -54,18 +58,22 @@ namespace Mehrere_Funktionen_2 {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void bAddNewRecord_Click(object sender, EventArgs e) {
-            AddNewRowForm addNewRow = new AddNewRowForm();
+            AddNewRowForm addNewRowForm = new AddNewRowForm();
 
             Activity tempActivity = new Activity();
-            addNewRow.NewActivity = tempActivity;
+            addNewRowForm.NewActivity = tempActivity;
             this.Hide();
-            addNewRow.ShowDialog();
+            DialogResult dialogResult = addNewRowForm.ShowDialog();
 
-            if (tempActivity != null) {
+            if (dialogResult == DialogResult.Yes) {
+                //MessageBox.Show("Successfully created new Activity !"); //test
                 collectionActivities.Add(tempActivity);
                 UpdateDgvRecordsFromCollection();
-
             }
+            else if (dialogResult == DialogResult.No) {
+                //MessageBox.Show("Creating aborted !"); //test
+            }
+
             this.Show();
         }
         //---------------------------------------------------------------------------
@@ -75,14 +83,21 @@ namespace Mehrere_Funktionen_2 {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void bRemoveActivity_Click(object sender, EventArgs e) {
-            //wenn ich es könnte besser sein?
-            foreach (DataGridViewRow row in this.dgvImplementingActivities.SelectedRows) {
-                for (int i = 0; i < collectionActivities.Count; ++i) {
-                    if (collectionActivities[i].CoreDescription == (string)row.Cells[0].Value) {
-                        collectionActivities.Remove(collectionActivities[i]);
+            DialogResult tempDialogResult = MessageBox.Show(
+                "For sure ?",
+                "Delete selected record",
+                MessageBoxButtons.YesNo
+                );
+            if (tempDialogResult == DialogResult.Yes) {
+                //wenn ich es könnte besser sein?
+                foreach (DataGridViewRow row in this.dgvImplementingActivities.SelectedRows) {
+                    for (int i = 0; i < collectionActivities.Count; ++i) {
+                        if (collectionActivities[i].CoreDescription == (string)row.Cells[0].Value) {
+                            collectionActivities.Remove(collectionActivities[i]);
+                        }
                     }
+                    UpdateDgvRecordsFromCollection();
                 }
-                UpdateDgvRecordsFromCollection();
             }
         }
         //---------------------------------------------------------------------------
@@ -119,14 +134,18 @@ namespace Mehrere_Funktionen_2 {
             if (dgvComboBoxCell != null) {
                 try {
                     Activity.ActivityFrequency tempFrequency = (Activity.ActivityFrequency)dgvComboBoxCell.Value;
-                    collectionActivities[e.RowIndex].Frequency = tempFrequency;
-                    dgvComboBoxCell.FlatStyle = FlatStyle.Popup; // changes ComboBox appearance
-                    dgvComboBoxCell.ReadOnly = true; // disables further modification
+
+                    collectionActivities[e.RowIndex].Frequency = tempFrequency; //one of enum value
+                    collectionActivities[e.RowIndex].LastCheckedInComboBox = DateTime.Now.Date; //today's date
+
+                    dgvComboBoxCell.FlatStyle = FlatStyle.Popup; //changes ComboBox appearance
+                    dgvComboBoxCell.Style.BackColor = System.Drawing.Color.LimeGreen; //changes color
+                    dgvComboBoxCell.ReadOnly = true; //disables further modification                    
                 }
                 catch (System.ArgumentOutOfRangeException ex) {
                     MessageBox.Show("don't tinker here !\n\n" + ex.ToString());
                 }
-            }
+            } 
         }
         //---------------------------------------------------------------------------
         /// <summary>
@@ -152,7 +171,28 @@ namespace Mehrere_Funktionen_2 {
                 this.Show();
             }
         }
+        //---------------------------------------------------------------------------
+        private void MainForm_Resize(object sender, EventArgs e) {
+
+            notifyIcon1.Icon = System.Drawing.SystemIcons.Application;
+
+            notifyIcon1.BalloonTipText = "Program minimalized to tray";
+
+            if (FormWindowState.Minimized == this.WindowState) {                
+                this.ShowInTaskbar = false; //better for this purpose
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(1500);
+            }
+        }
+        //---------------------------------------------------------------------------
+        private void MainForm_MouseDoubleClick(object sender, MouseEventArgs e) {
+            this.WindowState = FormWindowState.Normal; //maximalizes THIS form
+            this.ShowInTaskbar = true; //better for this purpose
+            notifyIcon1.Visible = false;
+        }
         //Methods -------------------------------------------------------------------
+        //added #region for test
+        #region Methods
         private bool LoadDgvScheme() {
             DataGridViewTextBoxColumn coreDescriptionColumn = new DataGridViewTextBoxColumn();
             {
@@ -235,6 +275,8 @@ namespace Mehrere_Funktionen_2 {
                     activity.PossibleSolution = 
                         ((dataRow[6] == DBNull.Value /*null*/) ? string.Empty : (string)dataRow[6]);
 
+                    activity.LastCheckedInComboBox = (DateTime)dataRow[7];                    
+
                     collectionActivities.Add(activity);
                 }                
             }
@@ -250,6 +292,7 @@ namespace Mehrere_Funktionen_2 {
                 //this way does not destroy DataGridView Scheme
                 dgvImplementingActivities.Rows.Add(activity.CoreDescription, activity.Frequency, activity.Category, activity.CommonDenominator);
             }
+            DisableAlreadyCheckedComboBoxes(); //need to disable again ComboBoxes
         }
         //---------------------------------------------------------------------------
         private DataTable LoadDataTableColumns() {
@@ -294,6 +337,11 @@ namespace Mehrere_Funktionen_2 {
             dataColumn6.ColumnName = "PossibleSolution";
             dataColumn6.DataType = typeof(string);
             dataTable.Columns.Add(dataColumn6);
+            //PossibleSolution
+            DataColumn dataColumn7 = new DataColumn();
+            dataColumn7.ColumnName = "LastCheckedInComboBox";
+            dataColumn7.DataType = typeof(DateTime);
+            dataTable.Columns.Add(dataColumn7);
 
             return dataTable;
         }
@@ -312,13 +360,34 @@ namespace Mehrere_Funktionen_2 {
                 dataRow[4] = activity.FullDescription;
                 dataRow[5] = activity.ReasonOfNotDoing;
                 dataRow[6] = activity.PossibleSolution;
+                dataRow[7] = activity.LastCheckedInComboBox;
 
                 dataTable.Rows.Add(dataRow);
             }
             dataTable.TableName = "ActivityRecord";
             dataTable.WriteXml("MehrereFunktionenDataBase.xml", XmlWriteMode.WriteSchema);
         }
+        //---------------------------------------------------------------------------
+        private void DisableAlreadyCheckedComboBoxes() {
+            //wenn ich es könnte besser sein? 
+            foreach (Activity activity in collectionActivities) {
+                //true if today's date is the same as date in Property 
+                if(DateTime.Now.Date == activity.LastCheckedInComboBox) {
+                    foreach (DataGridViewRow row in dgvImplementingActivities.Rows) {
+                        var firstCell = (DataGridViewTextBoxCell)row.Cells[0];
+
+                        //comparsion by string (I have mere idea how to do it better)
+                        if (activity.CoreDescription == firstCell.Value) {
+                            var secondCell = (DataGridViewComboBoxCell)row.Cells[1];
+                            secondCell.FlatStyle = FlatStyle.Popup; //changes ComboBox appearance
+                            secondCell.Style.BackColor = System.Drawing.Color.LimeGreen; //changes color
+                            secondCell.ReadOnly = true; //disables further modification     
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
     }
 }
-
-

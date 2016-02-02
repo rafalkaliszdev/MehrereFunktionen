@@ -22,9 +22,13 @@ namespace Mehrere_Funktionen_2 {
             lFrequency.Text = "current frequency...." + dataAboutParticularAction.Frequency;
             lCategory.Text = "category............." + dataAboutParticularAction.Category;
             lCommonDenominator.Text = "common denominator..."+ dataAboutParticularAction.CommonDenominator;
+
+            lLastChecked.Text = "last checked at......" + dataAboutParticularAction.LastCheckedInComboBox.ToShortDateString();
+
             tbFullDescription.Text = dataAboutParticularAction.FullDescription;
             tbReasonOfNotDoing.Text = dataAboutParticularAction.ReasonOfNotDoing;
             tbPossibleSolution.Text = dataAboutParticularAction.PossibleSolution;
+            
 
             currentActiveAction = dataAboutParticularAction;
         }

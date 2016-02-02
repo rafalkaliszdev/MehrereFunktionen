@@ -23,19 +23,21 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tcBlank = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tcImplementingActivitiesModule = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbPort = new System.Windows.Forms.TextBox();
             this.tbIP = new System.Windows.Forms.TextBox();
             this.bSendXml = new System.Windows.Forms.Button();
             this.bRemoveActivity = new System.Windows.Forms.Button();
             this.bAddNewRecord = new System.Windows.Forms.Button();
             this.dgvImplementingActivities = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl1.SuspendLayout();
             this.tcBlank.SuspendLayout();
             this.tcImplementingActivitiesModule.SuspendLayout();
@@ -50,7 +52,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(901, 314);
+            this.tabControl1.Size = new System.Drawing.Size(870, 614);
             this.tabControl1.TabIndex = 0;
             // 
             // tcBlank
@@ -59,7 +61,7 @@
             this.tcBlank.Location = new System.Drawing.Point(4, 22);
             this.tcBlank.Name = "tcBlank";
             this.tcBlank.Padding = new System.Windows.Forms.Padding(3);
-            this.tcBlank.Size = new System.Drawing.Size(893, 288);
+            this.tcBlank.Size = new System.Drawing.Size(862, 588);
             this.tcBlank.TabIndex = 0;
             this.tcBlank.Text = "Blank Start Page";
             this.tcBlank.UseVisualStyleBackColor = true;
@@ -86,10 +88,22 @@
             this.tcImplementingActivitiesModule.Location = new System.Drawing.Point(4, 22);
             this.tcImplementingActivitiesModule.Name = "tcImplementingActivitiesModule";
             this.tcImplementingActivitiesModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tcImplementingActivitiesModule.Size = new System.Drawing.Size(893, 288);
+            this.tcImplementingActivitiesModule.Size = new System.Drawing.Size(862, 588);
             this.tcImplementingActivitiesModule.TabIndex = 1;
             this.tcImplementingActivitiesModule.Text = "Implementing Activities Module";
             this.tcImplementingActivitiesModule.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(6, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(677, 165);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // tbPort
             // 
@@ -141,48 +155,44 @@
             // 
             this.dgvImplementingActivities.AllowUserToResizeColumns = false;
             this.dgvImplementingActivities.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvImplementingActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvImplementingActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvImplementingActivities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvImplementingActivities.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvImplementingActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImplementingActivities.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dgvImplementingActivities.Location = new System.Drawing.Point(17, 17);
+            this.dgvImplementingActivities.Location = new System.Drawing.Point(8, 174);
             this.dgvImplementingActivities.MultiSelect = false;
             this.dgvImplementingActivities.Name = "dgvImplementingActivities";
             this.dgvImplementingActivities.RowHeadersVisible = false;
             this.dgvImplementingActivities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvImplementingActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImplementingActivities.Size = new System.Drawing.Size(623, 212);
+            this.dgvImplementingActivities.Size = new System.Drawing.Size(675, 406);
             this.dgvImplementingActivities.TabIndex = 0;
             // 
-            // textBox1
+            // notifyIcon1
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(17, 235);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(647, 47);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.notifyIcon1.Text = "MehrereFunktionen";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDoubleClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 314);
+            this.ClientSize = new System.Drawing.Size(870, 614);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "MehrereFunktionen 1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDoubleClick);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.tabControl1.ResumeLayout(false);
             this.tcBlank.ResumeLayout(false);
             this.tcBlank.PerformLayout();
@@ -206,6 +216,7 @@
         private System.Windows.Forms.TextBox tbIP;
         private System.Windows.Forms.Button bSendXml;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

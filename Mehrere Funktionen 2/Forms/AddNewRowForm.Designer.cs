@@ -115,7 +115,7 @@
             this.tbPossibleSolution.Multiline = true;
             this.tbPossibleSolution.Name = "tbPossibleSolution";
             this.tbPossibleSolution.Size = new System.Drawing.Size(388, 62);
-            this.tbPossibleSolution.TabIndex = 12;
+            this.tbPossibleSolution.TabIndex = 7;
             this.tbPossibleSolution.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EveryTextBox_KeyDown);
             // 
             // tbReasonOfNotDoing
@@ -124,7 +124,7 @@
             this.tbReasonOfNotDoing.Multiline = true;
             this.tbReasonOfNotDoing.Name = "tbReasonOfNotDoing";
             this.tbReasonOfNotDoing.Size = new System.Drawing.Size(388, 62);
-            this.tbReasonOfNotDoing.TabIndex = 11;
+            this.tbReasonOfNotDoing.TabIndex = 6;
             this.tbReasonOfNotDoing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EveryTextBox_KeyDown);
             // 
             // tbFullDescription
@@ -133,7 +133,7 @@
             this.tbFullDescription.Multiline = true;
             this.tbFullDescription.Name = "tbFullDescription";
             this.tbFullDescription.Size = new System.Drawing.Size(388, 62);
-            this.tbFullDescription.TabIndex = 10;
+            this.tbFullDescription.TabIndex = 5;
             this.tbFullDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EveryTextBox_KeyDown);
             // 
             // tbCoreDescription
@@ -142,7 +142,7 @@
             this.tbCoreDescription.Location = new System.Drawing.Point(225, 10);
             this.tbCoreDescription.Name = "tbCoreDescription";
             this.tbCoreDescription.Size = new System.Drawing.Size(134, 20);
-            this.tbCoreDescription.TabIndex = 20;
+            this.tbCoreDescription.TabIndex = 1;
             // 
             // cbFrequency
             // 
@@ -151,7 +151,7 @@
             this.cbFrequency.Location = new System.Drawing.Point(225, 29);
             this.cbFrequency.Name = "cbFrequency";
             this.cbFrequency.Size = new System.Drawing.Size(134, 21);
-            this.cbFrequency.TabIndex = 21;
+            this.cbFrequency.TabIndex = 2;
             // 
             // cbCategory
             // 
@@ -160,7 +160,7 @@
             this.cbCategory.Location = new System.Drawing.Point(225, 48);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(134, 21);
-            this.cbCategory.TabIndex = 22;
+            this.cbCategory.TabIndex = 3;
             // 
             // cbCommonDenominator
             // 
@@ -169,7 +169,7 @@
             this.cbCommonDenominator.Location = new System.Drawing.Point(225, 67);
             this.cbCommonDenominator.Name = "cbCommonDenominator";
             this.cbCommonDenominator.Size = new System.Drawing.Size(134, 21);
-            this.cbCommonDenominator.TabIndex = 23;
+            this.cbCommonDenominator.TabIndex = 4;
             // 
             // AddNewRowForm
             // 
@@ -192,7 +192,7 @@
             this.Controls.Add(this.tbFullDescription);
             this.Name = "AddNewRowForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddNewRowForm";
+            this.Text = "Add New Activity (==positive habit)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddNewRowForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

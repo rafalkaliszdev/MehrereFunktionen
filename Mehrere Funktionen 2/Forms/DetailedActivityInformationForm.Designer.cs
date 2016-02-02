@@ -33,11 +33,12 @@
             this.lCategory = new System.Windows.Forms.Label();
             this.lCommonDenominator = new System.Windows.Forms.Label();
             this.lFrequency = new System.Windows.Forms.Label();
+            this.lLastChecked = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbFullDescription
             // 
-            this.tbFullDescription.Location = new System.Drawing.Point(12, 124);
+            this.tbFullDescription.Location = new System.Drawing.Point(12, 144);
             this.tbFullDescription.Multiline = true;
             this.tbFullDescription.Name = "tbFullDescription";
             this.tbFullDescription.Size = new System.Drawing.Size(388, 62);
@@ -46,7 +47,7 @@
             // 
             // tbReasonOfNotDoing
             // 
-            this.tbReasonOfNotDoing.Location = new System.Drawing.Point(12, 211);
+            this.tbReasonOfNotDoing.Location = new System.Drawing.Point(12, 231);
             this.tbReasonOfNotDoing.Multiline = true;
             this.tbReasonOfNotDoing.Name = "tbReasonOfNotDoing";
             this.tbReasonOfNotDoing.Size = new System.Drawing.Size(388, 62);
@@ -55,7 +56,7 @@
             // 
             // tbPossibleSolution
             // 
-            this.tbPossibleSolution.Location = new System.Drawing.Point(12, 298);
+            this.tbPossibleSolution.Location = new System.Drawing.Point(12, 318);
             this.tbPossibleSolution.Multiline = true;
             this.tbPossibleSolution.Name = "tbPossibleSolution";
             this.tbPossibleSolution.Size = new System.Drawing.Size(388, 62);
@@ -66,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(21, 102);
+            this.label1.Location = new System.Drawing.Point(21, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 19);
             this.label1.TabIndex = 3;
@@ -76,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(21, 189);
+            this.label2.Location = new System.Drawing.Point(21, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 19);
             this.label2.TabIndex = 4;
@@ -86,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(21, 276);
+            this.label3.Location = new System.Drawing.Point(21, 296);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 19);
             this.label3.TabIndex = 5;
@@ -132,11 +133,22 @@
             this.lFrequency.TabIndex = 9;
             this.lFrequency.Text = "current frequency....";
             // 
+            // lLastChecked
+            // 
+            this.lLastChecked.AutoSize = true;
+            this.lLastChecked.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lLastChecked.Location = new System.Drawing.Point(21, 85);
+            this.lLastChecked.Name = "lLastChecked";
+            this.lLastChecked.Size = new System.Drawing.Size(198, 19);
+            this.lLastChecked.TabIndex = 10;
+            this.lLastChecked.Text = "last checked at......";
+            // 
             // DetailedActivityInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 368);
+            this.ClientSize = new System.Drawing.Size(412, 392);
+            this.Controls.Add(this.lLastChecked);
             this.Controls.Add(this.lFrequency);
             this.Controls.Add(this.lCommonDenominator);
             this.Controls.Add(this.lCategory);
@@ -150,7 +162,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DetailedActivityInformationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetailedActivityInformationForm";
+            this.Text = "Activity Details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailedActivityInformationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label lCategory;
         private System.Windows.Forms.Label lCommonDenominator;
         private System.Windows.Forms.Label lFrequency;
+        private System.Windows.Forms.Label lLastChecked;
     }
 }
