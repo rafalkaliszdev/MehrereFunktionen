@@ -9,3 +9,5 @@ C:\Users\kvsanagi\documents\visual studio 2015\Projects\Mehrere Funktionen 2\Meh
 C:\Users\kvsanagi\documents\visual studio 2015\Projects\Mehrere Funktionen 2\Mehrere Funktionen 2\bin\Release\Mehrere Funktionen 2.exe
 C:\Users\kvsanagi\documents\visual studio 2015\Projects\Mehrere Funktionen 2\Mehrere Funktionen 2\bin\Release\Mehrere Funktionen 2.pdb
 C:\Users\kvsanagi\documents\visual studio 2015\Projects\Mehrere Funktionen 2\Mehrere Funktionen 2\obj\Release\Mehrere_Funktionen_2.AddNewRowForm.resources
+C:\Users\kvsanagi\Documents\Visual Studio 2015\Projects\Mehrere Funktionen 2\Mehrere Funktionen 2\bin\Release\Newtonsoft.Json.dll
+C:\Users\kvsanagi\Documents\Visual Studio 2015\Projects\Mehrere Funktionen 2\Mehrere Funktionen 2\bin\Release\Newtonsoft.Json.xml
