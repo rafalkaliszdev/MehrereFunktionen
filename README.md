@@ -1,7 +1,7 @@
 # forPublicOverview
 C# program for HR recruitment needs
 
-This program was intended to fulfill my needings about well-tailored personal development program.
+This program was intended to fulfill my needings about well-tailored personal development program (program supporting development of my positive habits).
 It also provide view for HR recruitment, so fell free to download the source code and judge it.
 
 Main Form .cx file
