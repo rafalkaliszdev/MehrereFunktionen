@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Mehrere_Funktionen_2.ImplementingActivitiesModule;
+using System;
 
 namespace Mehrere_Funktionen_2 {
     public partial class AddNewRowForm : Form {
@@ -12,27 +12,19 @@ namespace Mehrere_Funktionen_2 {
             tbReasonOfNotDoing.ShortcutsEnabled = true;
             tbPossibleSolution.ShortcutsEnabled = true;
 
-            //wenn ich es könnte besser sein?
-            cbFrequency.Items.Add(Activity.ActivityFrequency.NOT_DOING);
-            cbFrequency.Items.Add(Activity.ActivityFrequency.TOO_LITTLE);
-            cbFrequency.Items.Add(Activity.ActivityFrequency.SATYSFYING);
-            cbFrequency.Items.Add(Activity.ActivityFrequency.ALWAYS);
-
-            cbCategory.Items.Add(Activity.ActivityCategory.DISCIPLINE);
-            cbCategory.Items.Add(Activity.ActivityCategory.TO_BE_ELIMINATED);
-            cbCategory.Items.Add(Activity.ActivityCategory.EXCUSES);
-            cbCategory.Items.Add(Activity.ActivityCategory.DAY_CYCLE);
-            cbCategory.Items.Add(Activity.ActivityCategory.LIFESTYLE);
-            cbCategory.Items.Add(Activity.ActivityCategory.PHYSICAL_ACTIVITY);
-            cbCategory.Items.Add(Activity.ActivityCategory.ENVIRONMENT);
-            cbCategory.Items.Add(Activity.ActivityCategory.DIET);
-            cbCategory.Items.Add(Activity.ActivityCategory.NEGATIVE_HABITS);
-            cbCategory.Items.Add(Activity.ActivityCategory.POSITIVE_HABITS);
-
-            cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.NOT_SPECIFIED);
-            cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.BOULDER);
-            cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.EINESPUR);
-            cbCommonDenominator.Items.Add(Activity.ActivityCommonDenominatorCategory.ENSO);
+            //previously I added manually values into ComboBoxes, now I have nice foreach
+            //for ComboBox Frequency
+            foreach (var value in Enum.GetValues(typeof(Activity.ActivityFrequency))) {
+                cbFrequency.Items.Add(value);
+            }
+            //for ComboBox Category
+            foreach (var value in Enum.GetValues(typeof(Activity.ActivityCategory))) {
+                cbCategory.Items.Add(value);
+            }
+            //for ComboBox CommonDenominaotr
+            foreach (var value in Enum.GetValues(typeof(Activity.ActivityCommonDenominatorCategory))) {
+                cbCommonDenominator.Items.Add(value);
+            }
             cbCommonDenominator.SelectedItem = Activity.ActivityCommonDenominatorCategory.NOT_SPECIFIED;
         }
         //---------------------------------------------------------------------------

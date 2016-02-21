@@ -25,29 +25,36 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tcBlank = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.tcImplementingActivitiesModule = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tbPort = new System.Windows.Forms.TextBox();
-            this.tbIP = new System.Windows.Forms.TextBox();
-            this.bSendXml = new System.Windows.Forms.Button();
+            this.tcPositiveHabitsModule = new System.Windows.Forms.TabPage();
             this.bRemoveActivity = new System.Windows.Forms.Button();
             this.bAddNewRecord = new System.Windows.Forms.Button();
             this.dgvImplementingActivities = new System.Windows.Forms.DataGridView();
+            this.tcStrategicObjectivesModule = new System.Windows.Forms.TabPage();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl1.SuspendLayout();
             this.tcBlank.SuspendLayout();
-            this.tcImplementingActivitiesModule.SuspendLayout();
+            this.tcPositiveHabitsModule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImplementingActivities)).BeginInit();
+            this.tcStrategicObjectivesModule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tcBlank);
-            this.tabControl1.Controls.Add(this.tcImplementingActivitiesModule);
+            this.tabControl1.Controls.Add(this.tcPositiveHabitsModule);
+            this.tabControl1.Controls.Add(this.tcStrategicObjectivesModule);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -69,73 +76,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(98, 181);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(24, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(763, 37);
+            this.label1.Size = new System.Drawing.Size(812, 250);
             this.label1.TabIndex = 0;
-            this.label1.Text = "here should be some sort of summary of the last day";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
-            // tcImplementingActivitiesModule
+            // tcPositiveHabitsModule
             // 
-            this.tcImplementingActivitiesModule.Controls.Add(this.textBox1);
-            this.tcImplementingActivitiesModule.Controls.Add(this.tbPort);
-            this.tcImplementingActivitiesModule.Controls.Add(this.tbIP);
-            this.tcImplementingActivitiesModule.Controls.Add(this.bSendXml);
-            this.tcImplementingActivitiesModule.Controls.Add(this.bRemoveActivity);
-            this.tcImplementingActivitiesModule.Controls.Add(this.bAddNewRecord);
-            this.tcImplementingActivitiesModule.Controls.Add(this.dgvImplementingActivities);
-            this.tcImplementingActivitiesModule.Location = new System.Drawing.Point(4, 22);
-            this.tcImplementingActivitiesModule.Name = "tcImplementingActivitiesModule";
-            this.tcImplementingActivitiesModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tcImplementingActivitiesModule.Size = new System.Drawing.Size(862, 588);
-            this.tcImplementingActivitiesModule.TabIndex = 1;
-            this.tcImplementingActivitiesModule.Text = "Implementing Activities Module";
-            this.tcImplementingActivitiesModule.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(6, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(677, 165);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
-            // 
-            // tbPort
-            // 
-            this.tbPort.Location = new System.Drawing.Point(710, 241);
-            this.tbPort.Name = "tbPort";
-            this.tbPort.Size = new System.Drawing.Size(100, 20);
-            this.tbPort.TabIndex = 5;
-            this.tbPort.Text = "1024";
-            // 
-            // tbIP
-            // 
-            this.tbIP.Location = new System.Drawing.Point(710, 215);
-            this.tbIP.Name = "tbIP";
-            this.tbIP.Size = new System.Drawing.Size(100, 20);
-            this.tbIP.TabIndex = 4;
-            this.tbIP.Text = "127.0.0.1";
-            // 
-            // bSendXml
-            // 
-            this.bSendXml.Location = new System.Drawing.Point(710, 149);
-            this.bSendXml.Name = "bSendXml";
-            this.bSendXml.Size = new System.Drawing.Size(120, 60);
-            this.bSendXml.TabIndex = 3;
-            this.bSendXml.Text = "Send Xml";
-            this.bSendXml.UseVisualStyleBackColor = true;
-            this.bSendXml.Click += new System.EventHandler(this.bSendXml_Click);
+            this.tcPositiveHabitsModule.Controls.Add(this.bRemoveActivity);
+            this.tcPositiveHabitsModule.Controls.Add(this.bAddNewRecord);
+            this.tcPositiveHabitsModule.Controls.Add(this.dgvImplementingActivities);
+            this.tcPositiveHabitsModule.Location = new System.Drawing.Point(4, 22);
+            this.tcPositiveHabitsModule.Name = "tcPositiveHabitsModule";
+            this.tcPositiveHabitsModule.Padding = new System.Windows.Forms.Padding(3);
+            this.tcPositiveHabitsModule.Size = new System.Drawing.Size(862, 588);
+            this.tcPositiveHabitsModule.TabIndex = 1;
+            this.tcPositiveHabitsModule.Text = "PositiveHabitsModule";
+            this.tcPositiveHabitsModule.UseVisualStyleBackColor = true;
             // 
             // bRemoveActivity
             // 
-            this.bRemoveActivity.Location = new System.Drawing.Point(710, 83);
+            this.bRemoveActivity.Location = new System.Drawing.Point(689, 73);
             this.bRemoveActivity.Name = "bRemoveActivity";
-            this.bRemoveActivity.Size = new System.Drawing.Size(120, 60);
+            this.bRemoveActivity.Size = new System.Drawing.Size(170, 61);
             this.bRemoveActivity.TabIndex = 2;
             this.bRemoveActivity.Text = "Remove Selected Activity";
             this.bRemoveActivity.UseVisualStyleBackColor = true;
@@ -143,9 +108,9 @@
             // 
             // bAddNewRecord
             // 
-            this.bAddNewRecord.Location = new System.Drawing.Point(710, 17);
+            this.bAddNewRecord.Location = new System.Drawing.Point(689, 6);
             this.bAddNewRecord.Name = "bAddNewRecord";
-            this.bAddNewRecord.Size = new System.Drawing.Size(120, 60);
+            this.bAddNewRecord.Size = new System.Drawing.Size(170, 61);
             this.bAddNewRecord.TabIndex = 1;
             this.bAddNewRecord.Text = "Add New Activity";
             this.bAddNewRecord.UseVisualStyleBackColor = true;
@@ -155,23 +120,72 @@
             // 
             this.dgvImplementingActivities.AllowUserToResizeColumns = false;
             this.dgvImplementingActivities.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvImplementingActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvImplementingActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvImplementingActivities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvImplementingActivities.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvImplementingActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImplementingActivities.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dgvImplementingActivities.Location = new System.Drawing.Point(8, 174);
+            this.dgvImplementingActivities.Location = new System.Drawing.Point(8, 6);
             this.dgvImplementingActivities.MultiSelect = false;
             this.dgvImplementingActivities.Name = "dgvImplementingActivities";
             this.dgvImplementingActivities.RowHeadersVisible = false;
             this.dgvImplementingActivities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvImplementingActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImplementingActivities.Size = new System.Drawing.Size(675, 406);
+            this.dgvImplementingActivities.Size = new System.Drawing.Size(675, 574);
             this.dgvImplementingActivities.TabIndex = 0;
+            // 
+            // tcStrategicObjectivesModule
+            // 
+            this.tcStrategicObjectivesModule.Controls.Add(this.trackBar4);
+            this.tcStrategicObjectivesModule.Controls.Add(this.trackBar3);
+            this.tcStrategicObjectivesModule.Controls.Add(this.trackBar2);
+            this.tcStrategicObjectivesModule.Controls.Add(this.trackBar1);
+            this.tcStrategicObjectivesModule.Location = new System.Drawing.Point(4, 22);
+            this.tcStrategicObjectivesModule.Name = "tcStrategicObjectivesModule";
+            this.tcStrategicObjectivesModule.Size = new System.Drawing.Size(862, 588);
+            this.tcStrategicObjectivesModule.TabIndex = 2;
+            this.tcStrategicObjectivesModule.Text = "StrategicObjectivesModule";
+            this.tcStrategicObjectivesModule.UseVisualStyleBackColor = true;
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.Location = new System.Drawing.Point(20, 177);
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.RightToLeftLayout = true;
+            this.trackBar4.Size = new System.Drawing.Size(556, 45);
+            this.trackBar4.TabIndex = 3;
+            this.trackBar4.TickFrequency = 5;
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(20, 126);
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.RightToLeftLayout = true;
+            this.trackBar3.Size = new System.Drawing.Size(556, 45);
+            this.trackBar3.TabIndex = 2;
+            this.trackBar3.TickFrequency = 5;
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(20, 75);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.RightToLeftLayout = true;
+            this.trackBar2.Size = new System.Drawing.Size(556, 45);
+            this.trackBar2.TabIndex = 1;
+            this.trackBar2.TickFrequency = 5;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(20, 24);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.RightToLeftLayout = true;
+            this.trackBar1.Size = new System.Drawing.Size(556, 45);
+            this.trackBar1.TabIndex = 0;
+            this.trackBar1.TickFrequency = 5;
             // 
             // notifyIcon1
             // 
@@ -196,9 +210,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tcBlank.ResumeLayout(false);
             this.tcBlank.PerformLayout();
-            this.tcImplementingActivitiesModule.ResumeLayout(false);
-            this.tcImplementingActivitiesModule.PerformLayout();
+            this.tcPositiveHabitsModule.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImplementingActivities)).EndInit();
+            this.tcStrategicObjectivesModule.ResumeLayout(false);
+            this.tcStrategicObjectivesModule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,16 +226,17 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tcBlank;
-        private System.Windows.Forms.TabPage tcImplementingActivitiesModule;
+        private System.Windows.Forms.TabPage tcPositiveHabitsModule;
         private System.Windows.Forms.DataGridView dgvImplementingActivities;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bAddNewRecord;
         private System.Windows.Forms.Button bRemoveActivity;
-        private System.Windows.Forms.TextBox tbPort;
-        private System.Windows.Forms.TextBox tbIP;
-        private System.Windows.Forms.Button bSendXml;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.TabPage tcStrategicObjectivesModule;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }
 

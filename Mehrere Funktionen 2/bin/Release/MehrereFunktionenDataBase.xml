@@ -8,9 +8,9 @@
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="CoreDescription" type="xs:string" minOccurs="0" />
-                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
                 <xs:element name="FullDescription" type="xs:string" minOccurs="0" />
                 <xs:element name="ReasonOfNotDoing" type="xs:string" minOccurs="0" />
                 <xs:element name="PossibleSolution" type="xs:string" minOccurs="0" />
@@ -34,13 +34,13 @@
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>30GermanWordsPerDay</CoreDescription>
-    <Frequency>0</Frequency>
+    <Frequency>2</Frequency>
     <Category>0</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>ten sam schemat nauki co z angielskim</FullDescription>
     <ReasonOfNotDoing>nie mogę się rozdrabniać na zbyt małe zadania poboczne</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-21T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>SleepAtLeast8h</CoreDescription>

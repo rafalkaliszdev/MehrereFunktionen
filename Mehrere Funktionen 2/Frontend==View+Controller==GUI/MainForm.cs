@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Mehrere_Funktionen_2.ImplementingActivitiesModule;
 using System.Threading;
 using System.Globalization; //CultureInfo
 using System.IO;
-using System.Net.Sockets; //net feature
 
 namespace Mehrere_Funktionen_2 {
     public partial class MainForm : Form {
@@ -145,7 +143,7 @@ namespace Mehrere_Funktionen_2 {
                 catch (System.ArgumentOutOfRangeException ex) {
                     MessageBox.Show("don't tinker here !\n\n" + ex.ToString());
                 }
-            } 
+            }
         }
         //---------------------------------------------------------------------------
         /// <summary>
@@ -163,10 +161,10 @@ namespace Mehrere_Funktionen_2 {
                 try {
                     detailedForm.SendCurrentInformations(collectionActivities[e.RowIndex]);
                     this.Hide();
-                    detailedForm.ShowDialog();                    
+                    detailedForm.ShowDialog();
                 }
                 catch (System.ArgumentOutOfRangeException ex) {
-                    MessageBox.Show("just clicked on this record with blank values, eh?");
+                    MessageBox.Show("just clicked on this record with blank values, eh?" + ex.Message);
                 }
                 this.Show();
             }
@@ -177,8 +175,8 @@ namespace Mehrere_Funktionen_2 {
             notifyIcon1.Icon = System.Drawing.SystemIcons.Application;
 
             notifyIcon1.BalloonTipText = "Program minimalized to tray";
-
-            if (FormWindowState.Minimized == this.WindowState) {                
+            
+            if (FormWindowState.Minimized == this.WindowState) {
                 this.ShowInTaskbar = false; //better for this purpose
                 notifyIcon1.Visible = true;
                 notifyIcon1.ShowBalloonTip(1500);
@@ -200,6 +198,7 @@ namespace Mehrere_Funktionen_2 {
                 coreDescriptionColumn.Visible = true;
                 coreDescriptionColumn.Width = 120;      // 120px fits good
                 coreDescriptionColumn.ReadOnly = true;
+                coreDescriptionColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvImplementingActivities.Columns.Add(coreDescriptionColumn);
             }
             DataGridViewComboBoxColumn frequencyColumn = new DataGridViewComboBoxColumn();
@@ -209,10 +208,15 @@ namespace Mehrere_Funktionen_2 {
                 // this first intruction solves DataGridView:System.ArgumentException: 
                 // "DataGridViewComboBoxCell value is not valid."
                 frequencyColumn.ValueType = typeof(Activity.ActivityFrequency);
-                frequencyColumn.Items.Add(Activity.ActivityFrequency.NOT_DOING);
-                frequencyColumn.Items.Add(Activity.ActivityFrequency.TOO_LITTLE);
-                frequencyColumn.Items.Add(Activity.ActivityFrequency.SATYSFYING);
-                frequencyColumn.Items.Add(Activity.ActivityFrequency.ALWAYS);
+                foreach (Activity.ActivityFrequency value in Enum.GetValues(typeof(Activity.ActivityFrequency))) {
+                    frequencyColumn.Items.Add(value);
+                }
+                //2 obsolete
+                //frequencyColumn.Items.Add(Activity.ActivityFrequency.NOT_DOING);
+                //frequencyColumn.Items.Add(Activity.ActivityFrequency.TOO_LITTLE);
+                //frequencyColumn.Items.Add(Activity.ActivityFrequency.SATYSFYING);
+                //frequencyColumn.Items.Add(Activity.ActivityFrequency.ALWAYS);
+                frequencyColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvImplementingActivities.Columns.Add(frequencyColumn);
             }
             DataGridViewTextBoxColumn categoryColumn = new DataGridViewTextBoxColumn();
@@ -221,13 +225,15 @@ namespace Mehrere_Funktionen_2 {
                 categoryColumn.Visible = true;
                 categoryColumn.Width = 150;
                 categoryColumn.ReadOnly = true;
+                categoryColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvImplementingActivities.Columns.Add(categoryColumn);
             }
             DataGridViewTextBoxColumn commonDenominatorColumn = new DataGridViewTextBoxColumn();
             {
-                commonDenominatorColumn.HeaderText = "Common Denominator";
+                commonDenominatorColumn.HeaderText = "Common Denominator (Cause of Not Doing)";
                 commonDenominatorColumn.Visible = true;
                 commonDenominatorColumn.ReadOnly = true;
+                commonDenominatorColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvImplementingActivities.Columns.Add(commonDenominatorColumn);
             }
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
@@ -235,11 +241,12 @@ namespace Mehrere_Funktionen_2 {
                 buttonColumn.HeaderText = "";
                 buttonColumn.UseColumnTextForButtonValue = true; // all buttons will have the same Text
                 buttonColumn.Text = "Full Info";
+                buttonColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvImplementingActivities.Columns.Add(buttonColumn);
             }
 
             //this bool just makes sure that sequence of call stack will be correct
-            bool isSchemeReady = true; 
+            bool isSchemeReady = true;
             return isSchemeReady;
         }
         //---------------------------------------------------------------------------
@@ -268,17 +275,17 @@ namespace Mehrere_Funktionen_2 {
                     activity.Category = (Activity.ActivityCategory)dataRow[2];
                     activity.CommonDenominator = (Activity.ActivityCommonDenominatorCategory)dataRow[3];
 
-                    activity.FullDescription = 
+                    activity.FullDescription =
                         ((dataRow[4] == DBNull.Value /*null*/) ? string.Empty : (string)dataRow[4]);
-                    activity.ReasonOfNotDoing = 
+                    activity.ReasonOfNotDoing =
                         ((dataRow[5] == DBNull.Value /*null*/) ? string.Empty : (string)dataRow[5]);
-                    activity.PossibleSolution = 
+                    activity.PossibleSolution =
                         ((dataRow[6] == DBNull.Value /*null*/) ? string.Empty : (string)dataRow[6]);
 
-                    activity.LastCheckedInComboBox = (DateTime)dataRow[7];                    
+                    activity.LastCheckedInComboBox = (DateTime)dataRow[7];
 
                     collectionActivities.Add(activity);
-                }                
+                }
             }
         }
         //---------------------------------------------------------------------------
@@ -372,7 +379,7 @@ namespace Mehrere_Funktionen_2 {
             //wenn ich es könnte besser sein? 
             foreach (Activity activity in collectionActivities) {
                 //true if today's date is the same as date in Property 
-                if(DateTime.Now.Date == activity.LastCheckedInComboBox) {
+                if (DateTime.Now.Date == activity.LastCheckedInComboBox) {
                     foreach (DataGridViewRow row in dgvImplementingActivities.Rows) {
                         var firstCell = (DataGridViewTextBoxCell)row.Cells[0];
 

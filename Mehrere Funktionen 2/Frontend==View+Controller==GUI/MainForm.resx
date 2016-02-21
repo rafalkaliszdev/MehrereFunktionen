@@ -117,19 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="textBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="textBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>-&gt; CoreDescription is short title
--&gt; ComboBox of every record is supposed to be checked once per day, to determine current state of your habits. After choice, ComboBox is disabled. 
--&gt; I want add some statistics based on frequency. 
--&gt; Other Properties are just informational
--&gt; Add only these Activities (==positive habits) that I want to focus on. Don't add all Activities, especially those that I have already succesfully implemented
--&gt; common denomiantor is a common/ shared cause of not doing particular activity
+  <data name="label1.Text" xml:space="preserve">
+    <value>You can’t command your mind what to think about or not.  But if you’re aware of what’s going 
+on in your mind, and the futility of thoughts, you will eventually stop.
+
+If you do something for the sake of getting it done, that’s doing.  If you do something because 
+you like the process, that’s being. When you are engaged in your passion,
+ that’s when being becomes effortless.
+
+Accepting the present moment requires shifting from a state of doing/thinking to being.
+
+The more impatient you are, the more it signifies you’re living in the future.
 </value>
   </data>
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

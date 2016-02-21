@@ -8,9 +8,9 @@
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="CoreDescription" type="xs:string" minOccurs="0" />
-                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.ImplementingActivitiesModule.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
                 <xs:element name="FullDescription" type="xs:string" minOccurs="0" />
                 <xs:element name="ReasonOfNotDoing" type="xs:string" minOccurs="0" />
                 <xs:element name="PossibleSolution" type="xs:string" minOccurs="0" />
@@ -24,37 +24,37 @@
   </xs:schema>
   <ActivityRecord>
     <CoreDescription>Run2kmEveryDay</CoreDescription>
-    <Frequency>1</Frequency>
+    <Frequency>0</Frequency>
     <Category>5</Category>
     <CommonDenominator>2</CommonDenominator>
     <FullDescription />
     <ReasonOfNotDoing />
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>30GermanWordsPerDay</CoreDescription>
-    <Frequency>1</Frequency>
+    <Frequency>2</Frequency>
     <Category>0</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>ten sam schemat nauki co z angielskim</FullDescription>
     <ReasonOfNotDoing>nie mogę się rozdrabniać na zbyt małe zadania poboczne</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-21T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>SleepAtLeast8h</CoreDescription>
-    <Frequency>0</Frequency>
+    <Frequency>2</Frequency>
     <Category>3</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>“If you’re getting less sleep than you need, you’re worsening your condition”</FullDescription>
     <ReasonOfNotDoing />
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>DHA+Mg+Ca+Zn</CoreDescription>
-    <Frequency>1</Frequency>
+    <Frequency>0</Frequency>
     <Category>7</Category>
     <CommonDenominator>1</CommonDenominator>
     <FullDescription>only after midday lunch</FullDescription>
@@ -70,17 +70,17 @@
     <FullDescription>make things ready for tommorow (charge devices, put everything on an one cheap)</FullDescription>
     <ReasonOfNotDoing>systematic forgetting</ReasonOfNotDoing>
     <PossibleSolution>is not this program a remedy for forgetting things? &gt;:)</PossibleSolution>
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>f.lux after sunset</CoreDescription>
-    <Frequency>3</Frequency>
+    <Frequency>2</Frequency>
     <Category>3</Category>
     <CommonDenominator>2</CommonDenominator>
     <FullDescription>"You need to be a Nazi about light at night."</FullDescription>
     <ReasonOfNotDoing>it is not THAT needed. I can skip this</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
   <ActivityRecord>
     <CoreDescription>herbs</CoreDescription>
@@ -91,16 +91,6 @@
 1x dziennie</FullDescription>
     <ReasonOfNotDoing>systematic forgetting (and I have plenty yerba to drink)</ReasonOfNotDoing>
     <PossibleSolution>reminder -&gt; ENSO</PossibleSolution>
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
-    <CoreDescription>asd</CoreDescription>
-    <Frequency>2</Frequency>
-    <Category>4</Category>
-    <CommonDenominator>0</CommonDenominator>
-    <FullDescription />
-    <ReasonOfNotDoing />
-    <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
   </ActivityRecord>
 </NewDataSet>

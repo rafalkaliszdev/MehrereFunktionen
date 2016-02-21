@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using Mehrere_Funktionen_2.ImplementingActivitiesModule;
 
 namespace Mehrere_Funktionen_2 {
     public partial class DetailedActivityInformationForm : Form {
