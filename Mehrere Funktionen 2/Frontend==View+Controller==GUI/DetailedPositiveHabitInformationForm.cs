@@ -1,12 +1,12 @@
 ﻿using System.Windows.Forms;
 
 namespace Mehrere_Funktionen_2 {
-    public partial class DetailedActivityInformationForm : Form {
+    public partial class DetailedPositiveHabitInformationForm : Form {
         // wenn ich es könnte besser sein? 
-        Activity currentActiveAction;
+        PositiveHabit currentActiveAction;
 
         //---------------------------------------------------------------------------
-        public DetailedActivityInformationForm() {
+        public DetailedPositiveHabitInformationForm() {
             InitializeComponent();
             // even with these commands below, CTRL+A doesn't work
             tbFullDescription.ShortcutsEnabled = true;
@@ -14,7 +14,7 @@ namespace Mehrere_Funktionen_2 {
             tbPossibleSolution.ShortcutsEnabled = true;
         }
         //---------------------------------------------------------------------------
-        public void SendCurrentInformations(Activity dataAboutParticularAction) {
+        public void SendCurrentInformations(PositiveHabit dataAboutParticularAction) {
             //this method is called >>before<< .ShowDialog() so I can send object
             //whose Properties are used below
             lCoreDescription.Text = "core description....." + dataAboutParticularAction.CoreDescription;
@@ -32,7 +32,7 @@ namespace Mehrere_Funktionen_2 {
             currentActiveAction = dataAboutParticularAction;
         }
         //---------------------------------------------------------------------------
-        private void DetailedActivityInformationForm_FormClosing(object sender, FormClosingEventArgs e) {
+        private void DetailedPositiveHabitInformationForm_FormClosing(object sender, FormClosingEventArgs e) {
             currentActiveAction.FullDescription = tbFullDescription.Text;
             currentActiveAction.ReasonOfNotDoing = tbReasonOfNotDoing.Text;
             currentActiveAction.PossibleSolution = tbPossibleSolution.Text;

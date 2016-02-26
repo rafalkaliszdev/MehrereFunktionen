@@ -1,5 +1,5 @@
 ﻿namespace Mehrere_Funktionen_2 {
-    partial class AddNewRowForm {
+    partial class AddNewPositiveHabitForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -171,7 +171,7 @@
             this.cbCommonDenominator.Size = new System.Drawing.Size(134, 21);
             this.cbCommonDenominator.TabIndex = 4;
             // 
-            // AddNewRowForm
+            // AddNewPositiveHabitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,10 +190,10 @@
             this.Controls.Add(this.tbPossibleSolution);
             this.Controls.Add(this.tbReasonOfNotDoing);
             this.Controls.Add(this.tbFullDescription);
-            this.Name = "AddNewRowForm";
+            this.Name = "AddNewPositiveHabitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add New Activity (==positive habit)";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddNewRowForm_FormClosing);
+            this.Text = "Add New Positive Habit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddNewPositiveHabitForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

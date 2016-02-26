@@ -30,9 +30,9 @@
             this.tcBlank = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tcPositiveHabitsModule = new System.Windows.Forms.TabPage();
-            this.bRemoveActivity = new System.Windows.Forms.Button();
-            this.bAddNewRecord = new System.Windows.Forms.Button();
-            this.dgvImplementingActivities = new System.Windows.Forms.DataGridView();
+            this.bRemovePositiveHabit = new System.Windows.Forms.Button();
+            this.bAddNewPositiveHabit = new System.Windows.Forms.Button();
+            this.dgvPositiveHabits = new System.Windows.Forms.DataGridView();
             this.tcStrategicObjectivesModule = new System.Windows.Forms.TabPage();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
@@ -42,7 +42,7 @@
             this.tabControl1.SuspendLayout();
             this.tcBlank.SuspendLayout();
             this.tcPositiveHabitsModule.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImplementingActivities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPositiveHabits)).BeginInit();
             this.tcStrategicObjectivesModule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -85,9 +85,9 @@
             // 
             // tcPositiveHabitsModule
             // 
-            this.tcPositiveHabitsModule.Controls.Add(this.bRemoveActivity);
-            this.tcPositiveHabitsModule.Controls.Add(this.bAddNewRecord);
-            this.tcPositiveHabitsModule.Controls.Add(this.dgvImplementingActivities);
+            this.tcPositiveHabitsModule.Controls.Add(this.bRemovePositiveHabit);
+            this.tcPositiveHabitsModule.Controls.Add(this.bAddNewPositiveHabit);
+            this.tcPositiveHabitsModule.Controls.Add(this.dgvPositiveHabits);
             this.tcPositiveHabitsModule.Location = new System.Drawing.Point(4, 22);
             this.tcPositiveHabitsModule.Name = "tcPositiveHabitsModule";
             this.tcPositiveHabitsModule.Padding = new System.Windows.Forms.Padding(3);
@@ -96,47 +96,47 @@
             this.tcPositiveHabitsModule.Text = "PositiveHabitsModule";
             this.tcPositiveHabitsModule.UseVisualStyleBackColor = true;
             // 
-            // bRemoveActivity
+            // bRemovePositiveHabit
             // 
-            this.bRemoveActivity.Location = new System.Drawing.Point(689, 73);
-            this.bRemoveActivity.Name = "bRemoveActivity";
-            this.bRemoveActivity.Size = new System.Drawing.Size(170, 61);
-            this.bRemoveActivity.TabIndex = 2;
-            this.bRemoveActivity.Text = "Remove Selected Activity";
-            this.bRemoveActivity.UseVisualStyleBackColor = true;
-            this.bRemoveActivity.Click += new System.EventHandler(this.bRemoveActivity_Click);
+            this.bRemovePositiveHabit.Location = new System.Drawing.Point(689, 73);
+            this.bRemovePositiveHabit.Name = "bRemovePositiveHabit";
+            this.bRemovePositiveHabit.Size = new System.Drawing.Size(170, 61);
+            this.bRemovePositiveHabit.TabIndex = 2;
+            this.bRemovePositiveHabit.Text = "Remove Selected Positive Habit";
+            this.bRemovePositiveHabit.UseVisualStyleBackColor = true;
+            this.bRemovePositiveHabit.Click += new System.EventHandler(this.bRemovePositiveHabit_Click);
             // 
-            // bAddNewRecord
+            // bAddNewPositiveHabit
             // 
-            this.bAddNewRecord.Location = new System.Drawing.Point(689, 6);
-            this.bAddNewRecord.Name = "bAddNewRecord";
-            this.bAddNewRecord.Size = new System.Drawing.Size(170, 61);
-            this.bAddNewRecord.TabIndex = 1;
-            this.bAddNewRecord.Text = "Add New Activity";
-            this.bAddNewRecord.UseVisualStyleBackColor = true;
-            this.bAddNewRecord.Click += new System.EventHandler(this.bAddNewRecord_Click);
+            this.bAddNewPositiveHabit.Location = new System.Drawing.Point(689, 6);
+            this.bAddNewPositiveHabit.Name = "bAddNewPositiveHabit";
+            this.bAddNewPositiveHabit.Size = new System.Drawing.Size(170, 61);
+            this.bAddNewPositiveHabit.TabIndex = 1;
+            this.bAddNewPositiveHabit.Text = "Add New Positive Habit";
+            this.bAddNewPositiveHabit.UseVisualStyleBackColor = true;
+            this.bAddNewPositiveHabit.Click += new System.EventHandler(this.bAddNewRecord_Click);
             // 
-            // dgvImplementingActivities
+            // dgvPositiveHabits
             // 
-            this.dgvImplementingActivities.AllowUserToResizeColumns = false;
-            this.dgvImplementingActivities.AllowUserToResizeRows = false;
+            this.dgvPositiveHabits.AllowUserToResizeColumns = false;
+            this.dgvPositiveHabits.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvImplementingActivities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvImplementingActivities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvImplementingActivities.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvImplementingActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImplementingActivities.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dgvImplementingActivities.Location = new System.Drawing.Point(8, 6);
-            this.dgvImplementingActivities.MultiSelect = false;
-            this.dgvImplementingActivities.Name = "dgvImplementingActivities";
-            this.dgvImplementingActivities.RowHeadersVisible = false;
-            this.dgvImplementingActivities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvImplementingActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImplementingActivities.Size = new System.Drawing.Size(675, 574);
-            this.dgvImplementingActivities.TabIndex = 0;
+            this.dgvPositiveHabits.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPositiveHabits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPositiveHabits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvPositiveHabits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPositiveHabits.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dgvPositiveHabits.Location = new System.Drawing.Point(8, 6);
+            this.dgvPositiveHabits.MultiSelect = false;
+            this.dgvPositiveHabits.Name = "dgvPositiveHabits";
+            this.dgvPositiveHabits.RowHeadersVisible = false;
+            this.dgvPositiveHabits.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvPositiveHabits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPositiveHabits.Size = new System.Drawing.Size(675, 574);
+            this.dgvPositiveHabits.TabIndex = 0;
             // 
             // tcStrategicObjectivesModule
             // 
@@ -211,7 +211,7 @@
             this.tcBlank.ResumeLayout(false);
             this.tcBlank.PerformLayout();
             this.tcPositiveHabitsModule.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImplementingActivities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPositiveHabits)).EndInit();
             this.tcStrategicObjectivesModule.ResumeLayout(false);
             this.tcStrategicObjectivesModule.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
@@ -227,10 +227,10 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tcBlank;
         private System.Windows.Forms.TabPage tcPositiveHabitsModule;
-        private System.Windows.Forms.DataGridView dgvImplementingActivities;
+        private System.Windows.Forms.DataGridView dgvPositiveHabits;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bAddNewRecord;
-        private System.Windows.Forms.Button bRemoveActivity;
+        private System.Windows.Forms.Button bAddNewPositiveHabit;
+        private System.Windows.Forms.Button bRemovePositiveHabit;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TabPage tcStrategicObjectivesModule;
         private System.Windows.Forms.TrackBar trackBar1;

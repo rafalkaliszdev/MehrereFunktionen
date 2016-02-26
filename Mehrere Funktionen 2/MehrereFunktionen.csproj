@@ -50,17 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frontend==View+Controller==GUI\AddNewRowForm.cs">
+    <Compile Include="Frontend==View+Controller==GUI\AddNewPositiveHabitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frontend==View+Controller==GUI\AddNewRowForm.Designer.cs">
-      <DependentUpon>AddNewRowForm.cs</DependentUpon>
+    <Compile Include="Frontend==View+Controller==GUI\AddNewPositiveHabitForm.Designer.cs">
+      <DependentUpon>AddNewPositiveHabitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frontend==View+Controller==GUI\DetailedActivityInformationForm.cs">
+    <Compile Include="Frontend==View+Controller==GUI\DetailedPositiveHabitInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frontend==View+Controller==GUI\DetailedActivityInformationForm.Designer.cs">
-      <DependentUpon>DetailedActivityInformationForm.cs</DependentUpon>
+    <Compile Include="Frontend==View+Controller==GUI\DetailedPositiveHabitInformationForm.Designer.cs">
+      <DependentUpon>DetailedPositiveHabitInformationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Frontend==View+Controller==GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -71,11 +71,11 @@
     <Compile Include="Backend==Model==BusinessLogic\PositiveHabitsModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frontend==View+Controller==GUI\AddNewRowForm.resx">
-      <DependentUpon>AddNewRowForm.cs</DependentUpon>
+    <EmbeddedResource Include="Frontend==View+Controller==GUI\AddNewPositiveHabitForm.resx">
+      <DependentUpon>AddNewPositiveHabitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frontend==View+Controller==GUI\DetailedActivityInformationForm.resx">
-      <DependentUpon>DetailedActivityInformationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Frontend==View+Controller==GUI\DetailedPositiveHabitInformationForm.resx">
+      <DependentUpon>DetailedPositiveHabitInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend==View+Controller==GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

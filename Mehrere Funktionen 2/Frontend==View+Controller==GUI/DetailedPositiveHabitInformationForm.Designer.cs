@@ -1,5 +1,5 @@
 ﻿namespace Mehrere_Funktionen_2 {
-    partial class DetailedActivityInformationForm {
+    partial class DetailedPositiveHabitInformationForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -143,7 +143,7 @@
             this.lLastChecked.TabIndex = 10;
             this.lLastChecked.Text = "last checked at......";
             // 
-            // DetailedActivityInformationForm
+            // DetailedPositiveHabitInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,10 +160,10 @@
             this.Controls.Add(this.tbReasonOfNotDoing);
             this.Controls.Add(this.tbFullDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "DetailedActivityInformationForm";
+            this.Name = "DetailedPositiveHabitInformationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Activity Details";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailedActivityInformationForm_FormClosing);
+            this.Text = "Positive Habit Details";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailedPositiveHabitInformationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

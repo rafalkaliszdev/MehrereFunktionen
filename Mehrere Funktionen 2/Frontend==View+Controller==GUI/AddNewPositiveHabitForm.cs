@@ -2,9 +2,9 @@
 using System;
 
 namespace Mehrere_Funktionen_2 {
-    public partial class AddNewRowForm : Form {
-        public Activity NewActivity { get; set; }
-        public AddNewRowForm() {
+    public partial class AddNewPositiveHabitForm : Form {
+        public PositiveHabit NewPositiveHabit { get; set; }
+        public AddNewPositiveHabitForm() {
             InitializeComponent();
 
             // even with these commands below, CTRL+A doesn't work
@@ -14,21 +14,21 @@ namespace Mehrere_Funktionen_2 {
 
             //previously I added manually values into ComboBoxes, now I have nice foreach
             //for ComboBox Frequency
-            foreach (var value in Enum.GetValues(typeof(Activity.ActivityFrequency))) {
+            foreach (var value in Enum.GetValues(typeof(PositiveHabitFrequency))) {
                 cbFrequency.Items.Add(value);
             }
             //for ComboBox Category
-            foreach (var value in Enum.GetValues(typeof(Activity.ActivityCategory))) {
+            foreach (var value in Enum.GetValues(typeof(PositiveHabitCategory))) {
                 cbCategory.Items.Add(value);
             }
             //for ComboBox CommonDenominaotr
-            foreach (var value in Enum.GetValues(typeof(Activity.ActivityCommonDenominatorCategory))) {
+            foreach (var value in Enum.GetValues(typeof(PositiveHabitCommonDenominatorCategory))) {
                 cbCommonDenominator.Items.Add(value);
             }
-            cbCommonDenominator.SelectedItem = Activity.ActivityCommonDenominatorCategory.NOT_SPECIFIED;
+            cbCommonDenominator.SelectedItem = PositiveHabitCommonDenominatorCategory.NOT_SPECIFIED;
         }
         //---------------------------------------------------------------------------
-        private void AddNewRowForm_FormClosing(object sender, FormClosingEventArgs e) {
+        private void AddNewPositiveHabitForm_FormClosing(object sender, FormClosingEventArgs e) {
             //saving a file fill be done when user exits Form
             DialogResult dialogResult = MessageBox.Show(
                 "Save object?",
@@ -39,16 +39,16 @@ namespace Mehrere_Funktionen_2 {
                 MessageBoxOptions.DefaultDesktopOnly);
 
             if (dialogResult == DialogResult.Yes) {
-                NewActivity.CoreDescription = tbCoreDescription.Text;
+                NewPositiveHabit.CoreDescription = tbCoreDescription.Text;
                 if (tbCoreDescription.Text == string.Empty || tbCoreDescription.Text == "") {
                     MessageBox.Show("Core Description is the only property that can't be empty", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     e.Cancel = true;
                 }
 
                 try {
-                    NewActivity.Frequency = (Activity.ActivityFrequency)cbFrequency.SelectedItem;
-                    NewActivity.Category = (Activity.ActivityCategory)cbCategory.SelectedItem;
-                    NewActivity.CommonDenominator = (Activity.ActivityCommonDenominatorCategory)cbCommonDenominator.SelectedItem;
+                    NewPositiveHabit.Frequency = (PositiveHabitFrequency)cbFrequency.SelectedItem;
+                    NewPositiveHabit.Category = (PositiveHabitCategory)cbCategory.SelectedItem;
+                    NewPositiveHabit.CommonDenominator = (PositiveHabitCommonDenominatorCategory)cbCommonDenominator.SelectedItem;
                 }
                 catch {
                     if (cbFrequency.SelectedIndex == -1) {
@@ -64,14 +64,14 @@ namespace Mehrere_Funktionen_2 {
                         e.Cancel = true;
                     }
                 }
-                NewActivity.FullDescription = tbFullDescription.Text;
-                NewActivity.ReasonOfNotDoing = tbReasonOfNotDoing.Text;
-                NewActivity.PossibleSolution = tbPossibleSolution.Text;
+                NewPositiveHabit.FullDescription = tbFullDescription.Text;
+                NewPositiveHabit.ReasonOfNotDoing = tbReasonOfNotDoing.Text;
+                NewPositiveHabit.PossibleSolution = tbPossibleSolution.Text;
 
                 this.DialogResult = DialogResult.Yes; //refers to THIS Form (AddNewRowForm)
             }
             else {
-                NewActivity = null;
+                NewPositiveHabit = null;
                 this.DialogResult = DialogResult.No; //refers to THIS Form (AddNewRowForm)
             }
         }

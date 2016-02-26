@@ -1,16 +1,16 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ActivityRecord" msdata:UseCurrentLocale="true">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="PositiveHabitRecord" msdata:UseCurrentLocale="true">
       <xs:complexType>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:element name="ActivityRecord">
+          <xs:element name="PositiveHabitRecord">
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="CoreDescription" type="xs:string" minOccurs="0" />
-                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
-                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.Activity+ActivityCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Frequency" msdata:DataType="Mehrere_Funktionen_2.PositiveHabitFrequency, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="Category" msdata:DataType="Mehrere_Funktionen_2.PositiveHabitCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
+                <xs:element name="CommonDenominator" msdata:DataType="Mehrere_Funktionen_2.PositiveHabitCommonDenominatorCategory, Mehrere Funktionen 2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" type="xs:anyType" minOccurs="0" />
                 <xs:element name="FullDescription" type="xs:string" minOccurs="0" />
                 <xs:element name="ReasonOfNotDoing" type="xs:string" minOccurs="0" />
                 <xs:element name="PossibleSolution" type="xs:string" minOccurs="0" />
@@ -22,7 +22,7 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
-  <ActivityRecord>
+  <PositiveHabitRecord>
     <CoreDescription>Run2kmEveryDay</CoreDescription>
     <Frequency>0</Frequency>
     <Category>5</Category>
@@ -31,18 +31,18 @@
     <ReasonOfNotDoing />
     <PossibleSolution />
     <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>30GermanWordsPerDay</CoreDescription>
     <Frequency>2</Frequency>
     <Category>0</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>ten sam schemat nauki co z angielskim</FullDescription>
-    <ReasonOfNotDoing>nie mogę się rozdrabniać na zbyt małe zadania poboczne</ReasonOfNotDoing>
+    <ReasonOfNotDoing>nie mogę się rozdrabniac na zbyt małe zadania poboczne</ReasonOfNotDoing>
     <PossibleSolution />
     <LastCheckedInComboBox>2016-02-21T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>SleepAtLeast8h</CoreDescription>
     <Frequency>2</Frequency>
     <Category>3</Category>
@@ -51,18 +51,18 @@
     <ReasonOfNotDoing />
     <PossibleSolution />
     <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>DHA+Mg+Ca+Zn</CoreDescription>
-    <Frequency>0</Frequency>
+    <Frequency>2</Frequency>
     <Category>7</Category>
     <CommonDenominator>1</CommonDenominator>
     <FullDescription>only after midday lunch</FullDescription>
     <ReasonOfNotDoing>don't remember and sometimes not available</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+    <LastCheckedInComboBox>2016-02-26T00:00:00+01:00</LastCheckedInComboBox>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>SetForTommorow</CoreDescription>
     <Frequency>1</Frequency>
     <Category>3</Category>
@@ -71,8 +71,8 @@
     <ReasonOfNotDoing>systematic forgetting</ReasonOfNotDoing>
     <PossibleSolution>is not this program a remedy for forgetting things? &gt;:)</PossibleSolution>
     <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>f.lux after sunset</CoreDescription>
     <Frequency>2</Frequency>
     <Category>3</Category>
@@ -81,16 +81,16 @@
     <ReasonOfNotDoing>it is not THAT needed. I can skip this</ReasonOfNotDoing>
     <PossibleSolution />
     <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
-  <ActivityRecord>
+  </PositiveHabitRecord>
+  <PositiveHabitRecord>
     <CoreDescription>herbs</CoreDescription>
     <Frequency>1</Frequency>
     <Category>7</Category>
     <CommonDenominator>1</CommonDenominator>
-    <FullDescription>50g x (kwiat głogu, liść miłorzębu, ziele jemioły, liść rozmarynu, Leonurus cardiaca)	
+    <FullDescription>50g x (kwiat glogu, lisc milorzebu, ziele jemioly, lisc rozmarynu, Leonurus cardiaca)	
 1x dziennie</FullDescription>
     <ReasonOfNotDoing>systematic forgetting (and I have plenty yerba to drink)</ReasonOfNotDoing>
     <PossibleSolution>reminder -&gt; ENSO</PossibleSolution>
     <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
-  </ActivityRecord>
+  </PositiveHabitRecord>
 </NewDataSet>
