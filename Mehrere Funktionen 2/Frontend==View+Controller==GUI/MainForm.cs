@@ -11,7 +11,7 @@ namespace Mehrere_Funktionen_2 {
     public partial class MainForm : Form {
         //wenn ich es könnte besser sein? 
         public List<PositiveHabit> positiveHabitCollection;
-        
+
         //Constructor ---------------------------------------------------------------
         public MainForm() {
             InitializeComponent();
@@ -124,8 +124,9 @@ namespace Mehrere_Funktionen_2 {
                     positiveHabitCollection[e.RowIndex].LastCheckedInComboBox = DateTime.Now.Date; //today's date
 
                     dgvComboBoxCell.FlatStyle = FlatStyle.Popup; //changes ComboBox appearance
-                    dgvComboBoxCell.Style.BackColor = System.Drawing.Color.LimeGreen; //changes color
-                    dgvComboBoxCell.ReadOnly = true; //disables further modification                    
+                    dgvComboBoxCell.ReadOnly = true; //disables further modification   
+
+                    AdjustComboBoxCellColor(tempFrequency, dgvComboBoxCell);
                 }
                 catch (System.ArgumentOutOfRangeException ex) {
                     MessageBox.Show("don't tinker here !\n\n" + ex.ToString());
@@ -181,7 +182,7 @@ namespace Mehrere_Funktionen_2 {
             //can't locate this into business logic - because this method modyify control
             dgvPositiveHabits.Rows.Clear();
             foreach (PositiveHabit positiveHabit in positiveHabitCollection) {
-                if(positiveHabit.LastCheckedInComboBox == DateTime.Now.Date) {
+                if (positiveHabit.LastCheckedInComboBox == DateTime.Now.Date) {
                     dgvPositiveHabits.Rows.Add(positiveHabit.CoreDescription, positiveHabit.Frequency, positiveHabit.Category, positiveHabit.CommonDenominator);
                 }
                 else {
@@ -205,11 +206,36 @@ namespace Mehrere_Funktionen_2 {
                         if (PositiveHabit.CoreDescription == (string)firstCell.Value) {
                             var secondCell = (DataGridViewComboBoxCell)row.Cells[1];
                             secondCell.FlatStyle = FlatStyle.Popup; //changes ComboBox appearance
-                            secondCell.Style.BackColor = System.Drawing.Color.LimeGreen; //changes color
-                            secondCell.ReadOnly = true; //disables further modification     
+                            secondCell.ReadOnly = true; //disables further modification 
+
+                            AdjustComboBoxCellColor(PositiveHabit.Frequency, secondCell);
                         }
                     }
                 }
+            }
+        }
+        private void AdjustComboBoxCellColor(PositiveHabitFrequency tempFrequency, DataGridViewComboBoxCell dgvComboBoxCell) {
+            switch (tempFrequency) {
+                case PositiveHabitFrequency.NOT_DOING:
+                    {
+                        dgvComboBoxCell.Style.BackColor = System.Drawing.Color.Crimson;
+                        break;
+                    }
+                case PositiveHabitFrequency.TOO_LITTLE:
+                    {
+                        dgvComboBoxCell.Style.BackColor = System.Drawing.Color.Yellow;
+                        break;
+                    }
+                case PositiveHabitFrequency.SATYSFYING:
+                    {
+                        dgvComboBoxCell.Style.BackColor = System.Drawing.Color.GreenYellow;
+                        break;
+                    }
+                case PositiveHabitFrequency.ALWAYS:
+                    {
+                        dgvComboBoxCell.Style.BackColor = System.Drawing.Color.LawnGreen;
+                        break;
+                    }
             }
         }
         #endregion

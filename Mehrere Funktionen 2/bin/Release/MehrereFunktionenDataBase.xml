@@ -54,13 +54,13 @@
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>DHA+Mg+Ca+Zn</CoreDescription>
-    <Frequency>0</Frequency>
+    <Frequency>1</Frequency>
     <Category>7</Category>
     <CommonDenominator>1</CommonDenominator>
     <FullDescription>only after midday lunch</FullDescription>
     <ReasonOfNotDoing>don't remember and sometimes not available</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-02T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-27T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>SetForTommorow</CoreDescription>
@@ -80,7 +80,7 @@
     <FullDescription>"You need to be a Nazi about light at night."</FullDescription>
     <ReasonOfNotDoing>it is not THAT needed. I can skip this</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-27T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>herbs</CoreDescription>

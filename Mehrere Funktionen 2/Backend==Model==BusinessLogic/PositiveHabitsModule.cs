@@ -211,7 +211,7 @@ namespace Mehrere_Funktionen_2 {
             dataTable.Columns.Add(dataColumn6);
             //PossibleSolution
             DataColumn dataColumn7 = new DataColumn();
-            dataColumn7.ColumnName = "LastCheckedInComboBox";
+            dataColumn7.ColumnName = "LastCheckedInComboBox";   
             dataColumn7.DataType = typeof(DateTime);
             dataTable.Columns.Add(dataColumn7);
 
