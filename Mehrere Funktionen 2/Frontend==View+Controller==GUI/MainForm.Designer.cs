@@ -39,6 +39,9 @@
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsslHabitCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslPercentage = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tcBlank.SuspendLayout();
             this.tcPositiveHabitsModule.SuspendLayout();
@@ -48,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -59,7 +63,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(870, 614);
+            this.tabControl1.Size = new System.Drawing.Size(879, 613);
             this.tabControl1.TabIndex = 0;
             // 
             // tcBlank
@@ -85,20 +89,22 @@
             // 
             // tcPositiveHabitsModule
             // 
+            this.tcPositiveHabitsModule.BackColor = System.Drawing.Color.Transparent;
+            this.tcPositiveHabitsModule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tcPositiveHabitsModule.BackgroundImage")));
+            this.tcPositiveHabitsModule.Controls.Add(this.statusStrip1);
             this.tcPositiveHabitsModule.Controls.Add(this.bRemovePositiveHabit);
             this.tcPositiveHabitsModule.Controls.Add(this.bAddNewPositiveHabit);
             this.tcPositiveHabitsModule.Controls.Add(this.dgvPositiveHabits);
             this.tcPositiveHabitsModule.Location = new System.Drawing.Point(4, 22);
             this.tcPositiveHabitsModule.Name = "tcPositiveHabitsModule";
             this.tcPositiveHabitsModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tcPositiveHabitsModule.Size = new System.Drawing.Size(862, 588);
+            this.tcPositiveHabitsModule.Size = new System.Drawing.Size(871, 587);
             this.tcPositiveHabitsModule.TabIndex = 1;
             this.tcPositiveHabitsModule.Text = "PositiveHabitsModule";
-            this.tcPositiveHabitsModule.UseVisualStyleBackColor = true;
             // 
             // bRemovePositiveHabit
             // 
-            this.bRemovePositiveHabit.Location = new System.Drawing.Point(689, 73);
+            this.bRemovePositiveHabit.Location = new System.Drawing.Point(689, 386);
             this.bRemovePositiveHabit.Name = "bRemovePositiveHabit";
             this.bRemovePositiveHabit.Size = new System.Drawing.Size(170, 61);
             this.bRemovePositiveHabit.TabIndex = 2;
@@ -108,7 +114,7 @@
             // 
             // bAddNewPositiveHabit
             // 
-            this.bAddNewPositiveHabit.Location = new System.Drawing.Point(689, 6);
+            this.bAddNewPositiveHabit.Location = new System.Drawing.Point(689, 319);
             this.bAddNewPositiveHabit.Name = "bAddNewPositiveHabit";
             this.bAddNewPositiveHabit.Size = new System.Drawing.Size(170, 61);
             this.bAddNewPositiveHabit.TabIndex = 1;
@@ -129,13 +135,13 @@
             this.dgvPositiveHabits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPositiveHabits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPositiveHabits.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dgvPositiveHabits.Location = new System.Drawing.Point(8, 6);
+            this.dgvPositiveHabits.Location = new System.Drawing.Point(51, 38);
             this.dgvPositiveHabits.MultiSelect = false;
             this.dgvPositiveHabits.Name = "dgvPositiveHabits";
             this.dgvPositiveHabits.RowHeadersVisible = false;
             this.dgvPositiveHabits.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPositiveHabits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPositiveHabits.Size = new System.Drawing.Size(675, 574);
+            this.dgvPositiveHabits.Size = new System.Drawing.Size(632, 516);
             this.dgvPositiveHabits.TabIndex = 0;
             // 
             // tcStrategicObjectivesModule
@@ -193,11 +199,34 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDoubleClick);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslHabitCount,
+            this.tsslPercentage});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 562);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(865, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsslHabitCount
+            // 
+            this.tsslHabitCount.Name = "tsslHabitCount";
+            this.tsslHabitCount.Size = new System.Drawing.Size(118, 17);
+            this.tsslHabitCount.Text = "toolStripStatusLabel1";
+            // 
+            // tsslPercentage
+            // 
+            this.tsslPercentage.Name = "tsslPercentage";
+            this.tsslPercentage.Size = new System.Drawing.Size(118, 17);
+            this.tsslPercentage.Text = "toolStripStatusLabel1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 614);
+            this.ClientSize = new System.Drawing.Size(879, 613);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
@@ -211,6 +240,7 @@
             this.tcBlank.ResumeLayout(false);
             this.tcBlank.PerformLayout();
             this.tcPositiveHabitsModule.ResumeLayout(false);
+            this.tcPositiveHabitsModule.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPositiveHabits)).EndInit();
             this.tcStrategicObjectivesModule.ResumeLayout(false);
             this.tcStrategicObjectivesModule.PerformLayout();
@@ -218,6 +248,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,6 +269,9 @@
         private System.Windows.Forms.TrackBar trackBar4;
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslHabitCount;
+        private System.Windows.Forms.ToolStripStatusLabel tsslPercentage;
     }
 }
 

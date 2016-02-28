@@ -127,6 +127,7 @@ namespace Mehrere_Funktionen_2 {
                     dgvComboBoxCell.ReadOnly = true; //disables further modification   
 
                     AdjustComboBoxCellColor(tempFrequency, dgvComboBoxCell);
+                    UpdateMenuStripLabel();
                 }
                 catch (System.ArgumentOutOfRangeException ex) {
                     MessageBox.Show("don't tinker here !\n\n" + ex.ToString());
@@ -192,6 +193,7 @@ namespace Mehrere_Funktionen_2 {
 
             }
             DisableAlreadyCheckedComboBoxes(); //need to disable again ComboBoxes
+            UpdateMenuStripLabel();
         }
         private void DisableAlreadyCheckedComboBoxes() {
             //can't locate this into business logic - because this method modyify control
@@ -213,6 +215,23 @@ namespace Mehrere_Funktionen_2 {
                     }
                 }
             }
+        }
+        private void UpdateMenuStripLabel() {
+            //tssl stands for toolStripStatusLabel
+            tsslHabitCount.Text = "Current Habit Count: " + positiveHabitCollection.Count;
+
+            float percentage;
+            {
+                //math done here, for statistics, everything works fine, no need to tinker here
+                float tempTotal = 0;
+                foreach (var habit in positiveHabitCollection) {
+                    tempTotal += (int)habit.Frequency + 1;
+                }
+                const int maxValue = 4;
+                const int hundred = 100;
+                percentage = (hundred * (tempTotal / ((int)positiveHabitCollection.Count * maxValue)));
+            }
+            tsslPercentage.Text = string.Format("Frequency: " + percentage.ToString() + "%");
         }
         private void AdjustComboBoxCellColor(PositiveHabitFrequency tempFrequency, DataGridViewComboBoxCell dgvComboBoxCell) {
             switch (tempFrequency) {

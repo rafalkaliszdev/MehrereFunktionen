@@ -24,43 +24,43 @@
   </xs:schema>
   <PositiveHabitRecord>
     <CoreDescription>Run2kmEveryDay</CoreDescription>
-    <Frequency>0</Frequency>
+    <Frequency>2</Frequency>
     <Category>5</Category>
     <CommonDenominator>2</CommonDenominator>
     <FullDescription />
     <ReasonOfNotDoing />
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>30GermanWordsPerDay</CoreDescription>
-    <Frequency>2</Frequency>
+    <Frequency>1</Frequency>
     <Category>0</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>ten sam schemat nauki co z angielskim</FullDescription>
     <ReasonOfNotDoing>nie mogę się rozdrabniac na zbyt małe zadania poboczne</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-21T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>SleepAtLeast8h</CoreDescription>
-    <Frequency>2</Frequency>
+    <Frequency>1</Frequency>
     <Category>3</Category>
     <CommonDenominator>0</CommonDenominator>
     <FullDescription>“If you’re getting less sleep than you need, you’re worsening your condition”</FullDescription>
     <ReasonOfNotDoing />
     <PossibleSolution />
-    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>DHA+Mg+Ca+Zn</CoreDescription>
-    <Frequency>1</Frequency>
+    <Frequency>0</Frequency>
     <Category>7</Category>
     <CommonDenominator>1</CommonDenominator>
     <FullDescription>only after midday lunch</FullDescription>
     <ReasonOfNotDoing>don't remember and sometimes not available</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-27T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>SetForTommorow</CoreDescription>
@@ -70,17 +70,17 @@
     <FullDescription>make things ready for tommorow (charge devices, put everything on an one cheap)</FullDescription>
     <ReasonOfNotDoing>systematic forgetting</ReasonOfNotDoing>
     <PossibleSolution>is not this program a remedy for forgetting things? &gt;:)</PossibleSolution>
-    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>f.lux after sunset</CoreDescription>
-    <Frequency>2</Frequency>
+    <Frequency>3</Frequency>
     <Category>3</Category>
     <CommonDenominator>2</CommonDenominator>
     <FullDescription>"You need to be a Nazi about light at night."</FullDescription>
     <ReasonOfNotDoing>it is not THAT needed. I can skip this</ReasonOfNotDoing>
     <PossibleSolution />
-    <LastCheckedInComboBox>2016-02-27T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
   <PositiveHabitRecord>
     <CoreDescription>herbs</CoreDescription>
@@ -91,6 +91,6 @@
 1x dziennie</FullDescription>
     <ReasonOfNotDoing>systematic forgetting (and I have plenty yerba to drink)</ReasonOfNotDoing>
     <PossibleSolution>reminder -&gt; ENSO</PossibleSolution>
-    <LastCheckedInComboBox>0001-01-01T00:00:00+01:00</LastCheckedInComboBox>
+    <LastCheckedInComboBox>2016-02-28T00:00:00+01:00</LastCheckedInComboBox>
   </PositiveHabitRecord>
 </NewDataSet>
