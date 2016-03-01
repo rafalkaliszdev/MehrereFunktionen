@@ -225,10 +225,10 @@ namespace Mehrere_Funktionen_2 {
                 //math done here, for statistics, everything works fine, no need to tinker here
                 float tempTotal = 0;
                 foreach (var habit in positiveHabitCollection) {
-                    tempTotal += (int)habit.Frequency + 1;
+                    tempTotal += (int)habit.Frequency;// + 1;
                 }
-                const int maxValue = 4;
-                const int hundred = 100;
+                const int maxValue = 3; //trust me, everything works fine
+                const int hundred = 100; //this makes number e.g. 86 instead of 0.86
                 percentage = (hundred * (tempTotal / ((int)positiveHabitCollection.Count * maxValue)));
             }
             tsslPercentage.Text = string.Format("Frequency: " + percentage.ToString() + "%");
